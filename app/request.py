@@ -25,11 +25,11 @@ def get_sources(category):
         sources_results = None
         if get_sources_response['sources']:
             sources_results_list = get_sources_response['sources']
-            sources_results = process_results(sources_results_list)
+            sources_results = process_sources(sources_results_list)
 
     return sources_results
 
-def process_results(sources_list):
+def process_sources(sources_list):
     '''
     function that process the sources lists
     '''
@@ -59,3 +59,27 @@ def get_articles(id):
             articles_object = process_results(articles_object_list)
 
     return articles_object
+
+def process_articles(articles_list):
+	'''
+	'''
+	articles_object = []
+	for article in articles_list:
+		id = article.get('id')
+		author = article.get('author')
+		title = article.get('title')
+		description = article.get('description')
+		url = article.get('url')
+		image = article.get('urlToImage')
+		date = article.get('publishedAt')
+		
+		if image:
+			articles_result = Articles(id,author,title,description,url,image,date)
+			articles_object.append(articles_result)	
+		
+
+		
+
+		
+
+	return articles_object
