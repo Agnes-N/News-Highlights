@@ -22,10 +22,31 @@ def get_sources(category):
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
 
-        source_results = None
-        if get_sources_response['results']:
-            source_results_list = get_sources_response['results']
-            source_results = process_results(source_results_list)
+        sources_results = None
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
+            sources_results = process_results(sources_results_list)
 
-    return source_results
-    # get_articles_url = article_url(category,article_url)
+    return sources_results
+
+def process_results(sources_list):
+    '''
+    function that 
+    '''
+
+def get_articles(id):
+     '''
+    function to get the json response to the url request
+    '''
+    get_articles_url = article_url(id,api_key)
+
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_results = json.loads(get_articles_data)
+
+        articles_object = None
+        if get_articles_response['articles']:
+            articles_object_list = get_articles_results['articles']
+            articles_object = process_results(articles_object_list)
+
+    return articles_object
