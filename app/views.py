@@ -22,4 +22,6 @@ def articles(id):
     '''
     view function that returns the news details page and its data
     '''
-    render_template('articles.html', id = id)
+    sources = get_source(id)
+    title = f'{sources.title}'
+    render_template('articles.html',title = title,sources = sources)
