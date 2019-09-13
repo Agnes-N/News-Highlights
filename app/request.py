@@ -56,12 +56,13 @@ def get_articles(id):
         articles_object = None
         if get_articles_response['articles']:
             articles_object_list = get_articles_results['articles']
-            articles_object = process_results(articles_object_list)
+            articles_object = process_articles(articles_object_list)
 
     return articles_object
 
 def process_articles(articles_list):
 	'''
+    function that process the lists of articles
 	'''
 	articles_object = []
 	for article in articles_list:

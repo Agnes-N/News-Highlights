@@ -10,5 +10,12 @@
     </head>
     <body>
         <h1>{{message}}</h1>
+        <!-- Business News section  -->
+        <h3>Business News</h3>
+         <ul>
+            {% for business_sources in business %}
+                <li>{{ business_sources.title}}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
