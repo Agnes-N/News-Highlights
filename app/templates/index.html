@@ -17,5 +17,26 @@
                 <li>{{ business_sources.title}}</li>
             {% endfor %}
         </ul>
+        <!-- Sport News section  -->
+        <h3>Sports News</h3>
+         <ul>
+            {% for sports_sources in sports %}
+                <li>{{ sports_sources.title}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Tech News section  -->
+        <h3>Technology News</h3>
+         <ul>
+            {% for technology_sources in technology %}
+                <li>{{ technology_sources.title}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Entertainment News section  -->
+        <h3>Entertainment News</h3>
+         <ul>
+            {% for entertainment_sources in entertainment %}
+                <li>{{ entertainment_sources.title}}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
