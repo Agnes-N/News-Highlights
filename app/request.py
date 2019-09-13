@@ -31,8 +31,17 @@ def get_sources(category):
 
 def process_results(sources_list):
     '''
-    function that 
+    function that process the sources lists
     '''
+    sources_results = []
+    from source in sources_list:
+        id = source.get('id')
+        name = source.get('name')
+        description = source.get('description')
+        url = source.get('url')
+
+        sources_object = Sources(id, name, description, url)
+        sources_results.append(sources_object)
 
 def get_articles(id):
      '''
