@@ -46,6 +46,26 @@ def process_sources(sources_list):
         
     return sources_results
 
+def get_source(id):
+    get_sources_details_url = base_url.format(id,api_key)
+    
+    with urllib.request.urlopen(get_sources_details_url) as url:
+        sources_details_data = url.read()
+        sources_details_response = json.loads(sources_details_data)
+
+        sources_object = None
+        if sources_details_response:
+            id = sources_details_response.get('id')
+            name = sources_details_response.get('name')
+            description = sources_details_response.get('description')
+            url = sources_details_response.get('url')
+            category = sources_details_response.get('category')
+
+            sources_object = Sources(id,name,description,url,category)
+
+    return sources_object
+
+
 Articles = articles.Articles
 article_url = app.config["ARTICLES_BASE_URL"]
 

@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources
+from .request import get_sources,get_source
 
 #views
 @app.route('/')
@@ -12,7 +12,7 @@ def index():
     sports_sources = get_sources('sports')
     technology_sources = get_sources('technology')
     entertainment_sources = get_sources('entertainment')
-    
+
     message = 'Welcome to the best news Highlights'
     title = 'Home'
     return render_template('index.html',title = title,message = message,business_sources = business_sources,sports_sources = sports_sources,technology_sources= technology_sources,entertainment_sources = entertainment_sources)
