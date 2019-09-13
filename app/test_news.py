@@ -1,9 +1,9 @@
 import unittest
-from models import source
+from models import sources
 
-Source = source.Source
+Sources = sources.Sources
 
-class newsTest(unittest.TestCase):
+class SourcesTest(unittest.TestCase):
     '''
     Test Class to test the behaviour of the News class
     '''
@@ -12,10 +12,10 @@ class newsTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_source = Source('CNN','CNN News','Cable News Newtork that is a leader in providing news worldwide','cnn.com','general','U.S.A','en')
+        self.new_source = Sources('CNN','CNN News','Cable News Newtork that is a leader in providing news worldwide','cnn.com','general','U.S.A','en')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,News))
+        self.assertTrue(isinstance(self.new_source,Sources))
 
 
 if __name__ == '__main__':
