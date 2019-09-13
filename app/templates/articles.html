@@ -1,2 +1,16 @@
 {% extends 'base.html'%}
-<!-- <h1>Hello news {{id}}</h1> -->
+<!-- Content block -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-lg-6 urltoimage" style="background: url({{sources.urlToImage}}) no-repeat center center">
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-lg-6 sources-details">
+            <h3>{{ sources.title }}</h3>
+            <p class="description"> {{ sources.description }}</p>
+            <p class="url"> {{ sources.url }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
