@@ -1,7 +1,7 @@
 import unittest
-from models import news
+from models import source
 
-# News = news.News
+Source = source.Source
 
 class newsTest(unittest.TestCase):
     '''
@@ -12,7 +12,7 @@ class newsTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_news = News('CNN','CNN News','Cable News Newtork that is a leader in providing news worldwide','cnn.com','general','U.S.A','en')
+        self.new_source = Source('CNN','CNN News','Cable News Newtork that is a leader in providing news worldwide','cnn.com','general','U.S.A','en')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news,News))
