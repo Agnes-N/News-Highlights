@@ -12,7 +12,7 @@ class SourcesTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_source = Sources('abc-news','ABC News','Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com','https://abcnews.go.com/','general')
+        self.new_source = Sources('aftenposten','Aftenposten','Norges ledende nettavis med alltid oppdaterte nyheter innenfor innenriks, utenriks, sport og kultur.','https://www.aftenposten.no/','general')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Sources))
@@ -33,7 +33,3 @@ class ArticlesTest(unittest.TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Articles))
 
-
-
-# if __name__ == '__main__':
-#     unittest.main()
