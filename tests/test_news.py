@@ -1,7 +1,5 @@
 import unittest
-from models import sources,articles
-
-Sources = sources.Sources
+from app.models import Sources,Articles
 
 class SourcesTest(unittest.TestCase):
     '''
@@ -16,8 +14,6 @@ class SourcesTest(unittest.TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Sources))
-
-Articles = articles.Articles
 
 class ArticlesTest(unittest.TestCase):
     '''

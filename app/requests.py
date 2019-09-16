@@ -62,9 +62,11 @@ def get_articles(id):
 	Function that processes the articles and returns a list of articles objects
 	'''
 	get_articles_url = articles_url.format(id,api_key)
+	print(get_articles_url)
 
 	with urllib.request.urlopen(get_articles_url) as url:
 		articles_results = json.loads(url.read())
+
 
 		articles_object = None
 		if articles_results['articles']:
@@ -85,23 +87,8 @@ def process_articles(articles_list):
 		urlToImage = article_item.get('urlToImage')
 		publishedAt = article_item.get('publishedAt')
 		
-		if publishedAt:
+		if urlToImage:
 			articles_result = Articles(id,author,title,description,url,urlToImage,publishedAt)
 			articles_object.append(articles_result)	
-		
+				
 	return articles_object
-
-def search_news(name):
-    search_news_url = 'https://newsapi.org/v2/search/sources?apiKey={}&query={}'.format(api_key,name)
-    with urllib.request.urlopen(search_news_url) as url:
-        search_news_data = url.read()
-        search_news_response = json.loads(search_news_data)
-
-        search_news_results = None
-
-        if search_news_response['sources']:
-            search_news_list = search_news_response['sources']
-            search_news_results = process_results(search_news_list)
-
-
-    return search_news_results
